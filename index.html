@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam Top Up Store</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+}
+
+.logo {
+    font-size: 50px;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #22c55e;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+.success {
+    margin-top: 15px;
+    padding: 10px;
+    background: #16a34a;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #0f172a;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🎮🔥</div>
+    <h1>Adam Top Up Store</h1>
+    <p>Cepat • Murah • Aman</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Form Top Up Game</h2>
+        
+        <input type="text" id="idgame" placeholder="Masukkan ID Game">
+        
+        <select id="game">
+            <option value="">Pilih Game</option>
+            <option>Mobile Legends</option>
+            <option>Free Fire</option>
+            <option>PUBG Mobile</option>
+        </select>
+        
+        <select id="nominal">
+            <option value="">Pilih Nominal</option>
+            <option>50 Diamonds - Rp10.000</option>
+            <option>100 Diamonds - Rp18.000</option>
+            <option>250 Diamonds - Rp45.000</option>
+        </select>
+
+        <select id="payment">
+            <option value="">Metode Pembayaran</option>
+            <option>Dana</option>
+            <option>OVO</option>
+            <option>GoPay</option>
+            <option>Transfer Bank</option>
+        </select>
+
+        <button onclick="topup()">Top Up Sekarang</button>
+
+        <div class="success" id="successMsg">
+            ✅ Pesanan berhasil dikirim!
+        </div>
+    </div>
+</div>
+
+<footer>
+© 2026 Adam Satriyo - Top Up Store
+</footer>
+
+<script>
+function topup() {
+    let id = document.getElementById("idgame").value;
+    let game = document.getElementById("game").value;
+    let nominal = document.getElementById("nominal").value;
+    let payment = document.getElementById("payment").value;
+
+    if(id === "" || game === "" || nominal === "" || payment === "") {
+        alert("Harap lengkapi semua data!");
+    } else {
+        document.getElementById("successMsg").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
